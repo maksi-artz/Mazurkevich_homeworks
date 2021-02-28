@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anketa</title>
+</head>
+
+<body>
+    <script>
+        var lastName = prompt('Ваша фамилия ?');
+        var firstName = prompt('Ваше имя ?');
+        var patronymic = prompt('Ваше отчество ?');
+
+
+        var age = parseInt(prompt('Ваш возраст ?'));
+        if ((isNaN(age)) === true || !age || age >= 100 || age <= 0) {
+            age = parseInt(prompt('Ваш возраст ? Возможен ввод только цифр!'));
+        }
+
+        var gender = confirm('Ваш пол - мужской ?') ? 'мужской' : 'женский';
+
+        var pension;
+        if (age > 60) {
+            retiredPerson = 'на пенсии';
+        } else {
+            retiredPerson = 'нет';
+        }
+
+
+        alert('Ваше ФИО: ' + lastName + " " + firstName + " " + patronymic +
+            '\nВаш возраст в годах: ' + age +
+            '\nВаш возраст в днях: ' + (age * 365) +
+            '\nЧерез 5 лет вам будет: ' + (age + 5) +
+            '\nВаш пол: ' + gender +
+            '\nВы на пенсии: ' + retiredPerson);
+    </script>
+
+</body>
+
+</html>
