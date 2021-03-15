@@ -1,0 +1,8 @@
+.content {
+  position: relative;
+  display: block;
+  margin: 94px auto;
+  max-width: 1000px;
+  text-align: center;
+  z-index: 1;
+}

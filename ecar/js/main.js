@@ -1,47 +1,71 @@
 'use strict';
 
-// еще разбираюсь!!!
-const selected = document.querySelectorAll(".selected");
-const optionsContainer = document.querySelector(".options__container");
-
-const optionsList = document.querySelectorAll(".option");
-
-//  selected.forEachaddEventListener("click", () => {
-//  console.log('1');
-// optionsContainer.classList.toggle("active");
-// });
-
-selected.forEach(o => {
-  o.addEventListener("click", () => {
-    o.parentElement.querySelector(".options__container").classList.toggle("active");
-  });
-});
-
-optionsList.forEach(o => {
-  o.addEventListener("click", () => {
-    selected.innerHTML = o.querySelector("label").innerHTML;
-    optionsContainer.classList.remove("active");
-  });
-});
-
-
-
-
-
-
 // Header!!!
 window.addEventListener('scroll', function () {
   var header = document.getElementById("nav");
 
-  if (window.pageYOffset > 250) {
+  if (window.pageYOffset > 50) {
     header.classList.add("fixed");
   } else {
     header.classList.remove("fixed");
   }
 });
 
+// Tabs!!!
+(function ($) {
+  $(function () {
+
+    $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab--active)', function () {
+      $(this)
+        .addClass('catalog__tab--active').siblings().removeClass('catalog__tab--active')
+        .closest('div.container').find('div.catalog__content').removeClass('catalog__content--active').eq($(this).index()).addClass('catalog__content--active');
+    });
+
+  });
+})(jQuery);
+
+// DAte!!!
+$(function () {
+  $("#datepicker").datepicker();
+});
+
+//dropdown
+$(function () {
+  $(".dropdown").selectmenu();
+});
 
 
 
 
+var TIMEOUT = 4000;
 
+
+var interval = setInterval(handleNext, TIMEOUT);
+
+function handleNext() {
+
+  var $radios = $('input[class*="slide-radio"]');
+  var $activeRadio = $('input[class*="slide-radio"]:checked');
+
+  var currentIndex = $activeRadio.index();
+  var radiosLength = $radios.length;
+
+  $radios
+    .attr('checked', false);
+
+
+  if (currentIndex >= radiosLength - 1) {
+
+    $radios
+      .first()
+      .attr('checked', true);
+
+  } else {
+
+    $activeRadio
+      .next('input[class*="slide-radio"]')
+      .attr('checked', true);
+
+  }
+
+}

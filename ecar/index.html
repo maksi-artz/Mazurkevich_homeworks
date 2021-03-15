@@ -11,26 +11,30 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Nunito:wght@300;400;600;700;800&display=swap"
         rel="stylesheet">
-
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/_main-page.css">
+
+
+
 
 
 
 </head>
 
 <body>
-    <header class="header">
+    <header class="header header__bg">
         <div class="container">
 
             <div class="header__navbar" id="nav">
                 <a href="/" class="logo"><img src="./img/logo.svg" alt="e-car"></a>
                 <nav class="menu">
                     <ul>
-                        <li><a href="about-us.html" class="menu__item">About Us</a></li>
-                        <li><a href="#" class="menu__item">Cars</a></li>
-                        <li><a href="#" class="menu__item">Services</a></li>
-                        <li><a href="#" class="menu__item">FAQ</a></li>
+                        <li><a href="./pages/about-us.html" class="menu__item">About Us</a></li>
+                        <li><a href="./pages/about-us.html" class="menu__item">Cars</a></li>
+                        <li><a href="/" class="menu__item">Services</a></li>
+                        <li><a href="/" class="menu__item">FAQ</a></li>
                         <li><a href="#" class="menu__item">Contacts</a></li>
                         <li><a href="#" class="primary__btn">Rent Car</a></li>
                     </ul>
@@ -71,91 +75,64 @@
             </div>
             <div class="screen__img"></div>
 
-            <div class="search-form">
-                <div class="container__box">
-                    <h5>Car category</h5>
-                    <div class="select__box">
-                        <div class="options__container">
-                            <div class="option">
-                                <input type="radio" class="radio" id="auto" name="category" />
-                                <label for="auto">Premium to Xtraordinary</label>
-                            </div>
 
-                            <div class="option">
-                                <input type="radio" class="radio" id="auto" name="category" />
-                                <label for="auto">Intermediate to full size</label>
-                            </div>
+            <form action="#" class="search-form">
 
-                            <div class="option">
-                                <input type="radio" class="radio" id="auto" name="category" />
-                                <label for="auto">Small to compact</label>
-                            </div>
+                <fieldset class="search-form__content">
+                    <div class="search-form__item">
+                        <label for="car-type">Car category</label>
+                        <select name="car-type" id="car-type" class="dropdown">
+                            <option disabled selected="selected">Choose a category</option>
+                            <option>All</option>
+                            <option>Premium to Xtraordinary</option>
+                            <option>Intermediate to full size</option>
+                            <option>Small to compact</option>
+                            <option>Truck & Van</option>
+                        </select>
 
-                            <div class="option">
-                                <input type="radio" class="radio" id="auto" name="category" />
-                                <label for="auto">Truck & Van</label>
-                            </div>
-                        </div>
 
-                        <div class="selected">
-                            Choosse a car type
-                        </div>
                     </div>
-                </div>
-                <div class="container__box">
-                    <h5>Pick-up Location</h5>
-                    <div class="select__box">
-                        <div class="options__container">
-                            <div class="option">
-                                <input type="radio" class="radio" id="location" name="category" />
-                                <label for="location">Austria, Vienna</label>
-                            </div>
 
-                            <div class="option">
-                                <input type="radio" class="radio" id="location" name="category" />
-                                <label for="location">Belgium, Brussels</label>
-                            </div>
+                    <div class="search-form__item">
+                        <label for="location">Pick-up Location</label>
+                        <select name="location" id="location" class="dropdown">
 
-                            <div class="option">
-                                <input type="radio" class="radio" id="location" name="category" />
-                                <label for="location">Belarus, Minsk</label>
-                            </div>
+                            <option disabled selected="selected">Pick-up Location</option>
+                            <option>Austria, Vienna</option>
+                            <option>Netherlands, Amsterdam</option>
+                            <option>Belgium, Brussels</option>
+                            <option>Belarus, Minsk</option>
+                            <option>United Kingdom, London</option>
+                            <option>Germany, Berlin</option>
+                            <option>France, Paris</option>
 
-                            <div class="option">
-                                <input type="radio" class="radio" id="location" name="category" />
-                                <label for="location">Germany, Berlin</label>
-                            </div>
-                            <div class="option">
-                                <input type="radio" class="radio" id="location" name="category" />
-                                <label for="location">Spain, Madrid</label>
-                            </div>
 
-                            <div class="option">
-                                <input type="radio" class="radio" id="location" name="category" />
-                                <label for="location">Italy, Rome</label>
-                            </div>
 
-                            <div class="option">
-                                <input type="radio" class="radio" id="location" name="category" />
-                                <label for="location">Netherlands, Amsterdam</label>
-                            </div>
-                        </div>
+                        </select>
 
-                        <div class="selected">
-                            Choosse location
-                        </div>
                     </div>
-                </div>
-                <div class="container__box">
-                    <h5>Pick-up Date</h5>
-                    <div class="select__box">
-                        <p class="selected">Choose Date</p>
+
+                    <div class="search-form__item">
+                        <label for="date">Date</label>
+                        <input type="text" id="datepicker">
+
                     </div>
-                </div>
 
-                <a href="#" class="primary__btn">Show offers</a>
+                    <a href="#" class="primary__btn">Show offers</a>
 
-            </div>
+
+                </fieldset>
+
+
+
+
+
+
+            </form>
+
+
+
+        </div>
 
         </div>
     </header>
@@ -166,16 +143,16 @@
             <h2>Our Cars</h2>
 
             <ul class="catalog__tabs">
-                <li class="catalog__tab " data-tab="1"> All</li>
-                <li class=" catalog__tab" data-tab="2">Premium to Xtraordinary</li>
-                <li class=" catalog__tab" data-tab="3">Intermediate to full size</li>
-                <li class=" catalog__tab" data-tab="4">Small to compact</li>
-                <li class=" catalog__tab" data-tab="5">Truck & Van</li>
+                <li class="catalog__tab catalog__tab--active "> All</li>
+                <li class=" catalog__tab">Premium to Xtraordinary</li>
+                <li class=" catalog__tab">Intermediate to full size</li>
+                <li class=" catalog__tab">Small to compact</li>
+                <li class=" catalog__tab">Truck & Van</li>
             </ul>
 
 
 
-            <div class="catalog__content catalog__content--active " data-tab="1">
+            <div class="catalog__content catalog__content--active">
 
                 <div class="catalog-item">
                     <img class="catalog-item__img" src="./img/tesla-s.png" alt="tesla-s">
@@ -777,7 +754,7 @@
 
             </div>
 
-            <div class="catalog__content" data-tab="2">
+            <div class="catalog__content">
 
                 <div class="catalog-item">
                     <img class="catalog-item__img" src="./img/tesla-s.png" alt="tesla-s">
@@ -990,7 +967,7 @@
                 </div>
             </div>
 
-            <div class="catalog__content" data-tab="3">
+            <div class="catalog__content">
 
                 <div class="catalog-item">
                     <img class="catalog-item__img" src="./img/vw-id3.png" alt="VW-ID.3">
@@ -1103,7 +1080,7 @@
 
             </div>
 
-            <div class="catalog__content" data-tab="4">
+            <div class="catalog__content">
 
                 <div class="catalog-item">
                     <img class="catalog-item__img" src="./img/kia-e-soul.png" alt="KIA e-Soul">
@@ -1285,8 +1262,7 @@
 
             </div>
 
-            <div class="catalog__content" data-tab="5">
-
+            <div class="catalog__content">
                 <div class="catalog-item">
                     <img class="catalog-item__img" src="./img/nissan-e-nv200.png" alt="Nissan e-NV200">
 
@@ -1393,9 +1369,14 @@
                     </div>
                 </div>
 
-
-
             </div>
+
+
+
+
+
+
+        </div>
         </div>
     </section>
 
@@ -1543,7 +1524,7 @@
             <div class="station__map">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19606.494927216037!2d5.1339964634996775!3d52.10135543349729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7355b758e0b3919a!2sEVBox%20Charging%20Station!5e0!3m2!1sru!2sby!4v1614864061925!5m2!1sru!2sby"
-                    width="1100" height="600" style="border:0;" allowfullscreen=""></iframe>
+                    max-width="1100" height="600" style="border:0;" allowfullscreen=""></iframe>
             </div>
         </div>
     </section>
@@ -1585,6 +1566,8 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
     <script src="./js/main.js"></script>
 
 
